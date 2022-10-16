@@ -18,6 +18,9 @@ train['SalePrice'].describe()
 sn.displot(data=train['SalePrice']) # positively skewed distribution # Peakedness
 print("Skewness: %f" % train['SalePrice'].skew())
 print("Kurtosis: %f" % train['SalePrice'].kurt())
-
-
-
+# Define num vars
+num_vars = train.dtypes[train.dtypes != 'object']
+# Define cat vars
+cat_vars = train.dtypes[train.dtypes == 'object']
+# 
+corr = train.corr()
